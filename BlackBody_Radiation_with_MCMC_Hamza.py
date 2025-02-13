@@ -23,9 +23,9 @@ FREQUENCY_DOMAIN = np.geomspace(0.1, 1000, 850)  # Log-spaced for better visuali
 def load_data() -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     """Load COBE (FIRAS) and ARCADE 2 data."""
     cobe_data = np.loadtxt(
-        'lambda.gsfc.nasa.gov_data_cobe_firas_monopole_spec_firas_monopole_spec_v1.txt', unpack=True
+        'COBE_data(freq,Energy,error).txt', unpack=True
     )
-    arcade_data = np.loadtxt('Intesidades_ARCADE_ERROR.txt', unpack=True)
+    arcade_data = np.loadtxt('ARCADE_data(freq,Energy,error).txt', unpack=True)
     
     return (
         cobe_data[0] * 30,  # Convert cm^-1 to GHz  (Frequency)
@@ -123,7 +123,7 @@ def main():
     for label, data in datasets.items():
         sampler = run_mcmc(p0, nwalkers, niter, len(initial), log_probability, data)
         plot_results(sampler, *data, label)
-        # save_results(sampler, label, nwalkers, niter, *data)
+        save_results(sampler, label, nwalkers, niter, *data)
 
 
 if __name__ == "__main__":
