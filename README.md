@@ -1,50 +1,74 @@
-# Using Astronomical Data with Machine Learning Classification and Markov Chain Monte Carlo Method
+# **Using Astronomical Data with Machine Learning Classification and Markov Chain Monte Carlo Method**
 
-This repository contains Python scripts to download, preprocess, and analyze astronomical data from the **Sloan Digital Sky Survey (SDSS)** catalog using the `astroquery` library to access data from **Vizier**. The scripts train machine learning models to classify astronomical objects based on their photometric features (e.g., magnitudes in different bands) and evaluate their performance.
+This repository contains **Python and MATLAB** scripts for astronomical data analysis, classification with **Machine Learning**, and parameter estimation using **Markov Chain Monte Carlo (MCMC)**.
 
-Additionally, the repository includes a script that uses **Markov Chain Monte Carlo (MCMC)**, specifically the `emcee` package, to estimate the **Cosmic Microwave Background (CMB) temperature** from data obtained by **COBE** and **ARCADE**. This analysis involves fitting a model to the observed data, calculating the posterior distribution of the temperature, and providing an estimate of the CMB temperature with its associated uncertainty.
+## **Repository Contents**
 
-## Scripts Overview
+### **1. Astronomical Object Classification with Machine Learning**
+These scripts utilize data from the **Sloan Digital Sky Survey (SDSS)** catalog to train classification models for identifying different types of astronomical objects.
 
-### 1. Random Forest Classifier
-- **Model**: Trains a **Random Forest Classifier**.
-- **Process**:
-  - Downloads the SDSS catalog from Vizier if it doesn't exist locally or if the row count doesn't match the expected limit.
-  - Preprocesses the data by selecting relevant features (`umag`, `gmag`, `rmag`, `imag`, `zmag`) and the target variable (`class`).
+#### **1.1. Random Forest Classifier**
+- **Model:** Trains a **Random Forest Classifier** with 200 estimators.
+- **Process:**
+  - Downloads the SDSS catalog from Vizier if not already available locally.
+  - Preprocesses the data, selecting relevant magnitudes (`umag`, `gmag`, `rmag`, `imag`, `zmag`) and the target variable (`class`).
   - Splits the data into training and testing sets.
-  - Trains the Random Forest model with 200 estimators.
-  - Evaluates the model using accuracy and a classification report.
-  - Visualizes the class distribution in the training data.
+  - Evaluates the model using **accuracy** and a **classification report**.
+  - Generates class distribution plots for the training dataset.
 
-### 2. Multi-Layer Perceptron (MLP) Neural Network
-- **Model**: Trains a **Multi-Layer Perceptron (MLP) Neural Network**.
-- **Process**:
-  - Similar to the Random Forest script, it downloads and preprocesses the data.
-  - Uses an MLP classifier with a specific architecture (`hidden_layer_sizes=(128, 64)`) and training parameters (`learning_rate_init`, `alpha`, etc.).
-  - Evaluates the model's performance and visualizes the class distribution in the training data.
+#### **1.2. Multi-Layer Perceptron (MLP) Neural Network**
+- **Model:** Trains an **MLP neural network**.
+- **Process:**
+  - Downloads and preprocesses the SDSS data.
+  - Configures and trains an **MLP with architecture `(128, 64)`**.
+  - Evaluates model accuracy and generates a classification report.
 
-### 3. CMB Temperature Estimation with MCMC
-- **Model**: Uses **Markov Chain Monte Carlo (MCMC)** with the `emcee` package.
-- **Process**:
-  - Downloads CMB temperature data from **COBE** and **ARCADE**.
-  - Defines a simple model assuming a constant temperature for the CMB across different frequencies.
-  - Uses MCMC to sample from the posterior distribution of the temperature and estimate its value, including its uncertainty.
+---
 
-## Key Features
-- **Data Download**: Automatically downloads the SDSS catalog using `astroquery.Vizier` if not already available locally.
-- **Preprocessing**: Filters relevant columns and removes rows with missing values.
-- **Model Training**:
-  - Random Forest: Ensemble learning with 200 decision trees.
-  - MLP: Deep learning with a neural network architecture.
-  - MCMC for CMB: Uses the `emcee` package to estimate the CMB temperature.
-- **Evaluation**: Provides accuracy and a detailed classification report for each model.
-- **Visualization**: Plots the class distribution in the training set to understand data balance.
+### **2. CMB Temperature Estimation with MCMC**
+This script uses **Markov Chain Monte Carlo (MCMC)** with `emcee` to estimate the **Cosmic Microwave Background (CMB) temperature** using data from **COBE** and **ARCADE**.
 
-## Requirements
-- Python 3.x
-- Libraries: `astroquery`, `pandas`, `scikit-learn`, `matplotlib`, `emcee`
+#### **Process:**
+- Downloads CMB temperature data from **COBE** and **ARCADE**.
+- Defines a model based on Planck's law for black-body radiation.
+- Uses **MCMC** to estimate the CMB temperature and calculate its uncertainty.
+- Generates plots comparing observational data with the theoretical fit.
 
-## Usage
-1. Clone the repository:
+---
+
+### **3. Orbital Simulation of Jupiter, Saturn, and the Sun (MATLAB)**
+This **MATLAB** script simulates the **orbital dynamics of Jupiter, Saturn, and the Sun** using the **4th-order Runge-Kutta method** (`odeRK4`).
+
+#### **Key Features**
+- **Realistic gravitational model**: Considers the gravitational interaction between the celestial bodies.
+- **High-precision numerical integration**: Uses **Runge-Kutta 4** with **1,000,000 steps** to simulate 12 years.
+- **Dynamic visualization**:
+  - **Red**: Sun.
+  - **Black**: Jupiter.
+  - **Blue**: Saturn.
+  - Trajectories update in real-time.
+
+#### **Equations and Parameters**
+- **Gravitational constant (G):** 5168.6 (units in thousand km, hours, and Earth masses).
+- **Masses**:
+  - **Jupiter:** 318 Earth masses.
+  - **Saturn:** \(10^6\) Earth masses.
+  - **Sun:** \(10^6\) Earth masses.
+
+#### **Usage Example**
+Run the script in **MATLAB**, ensuring that the function `termino_dcha_tres` is correctly implemented.
+
+---
+
+## **Requirements**
+- **Python 3.x**
+- Required libraries: `astroquery`, `pandas`, `scikit-learn`, `matplotlib`, `emcee`
+- **MATLAB** for running the orbital simulation.
+
+---
+
+## **Usage**
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
