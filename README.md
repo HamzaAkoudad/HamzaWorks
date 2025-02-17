@@ -45,14 +45,14 @@ This **MATLAB** script simulates the **orbital dynamics of Jupiter, Saturn, and 
 - **Dynamic visualization**:
   - **Red**: Sun.
   - **Black**: Jupiter.
-  - **Blue**: Saturn.
+  - **Blue**: other star.
   - Trajectories update in real-time.
 
 #### **Equations and Parameters**
 - **Gravitational constant (G):** 5168.6 (units in thousand km, hours, and Earth masses).
 - **Masses**:
   - **Jupiter:** 318 Earth masses.
-  - **Saturn:** \(10^6\) Earth masses.
+  - **other star:** \(10^6\) Earth masses.
   - **Sun:** \(10^6\) Earth masses.
 
 #### **Usage Example**
