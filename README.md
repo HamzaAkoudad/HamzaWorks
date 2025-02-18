@@ -1,4 +1,4 @@
-# **Using Astronomical Data with Machine Learning Classification and Markov Chain Monte Carlo Method**
+# **Using Computational Tools for Scientific Analysis (Machine Learning Classification, Markov Chain Monte Carlo Method) **
 
 This repository contains **Python and MATLAB** scripts for astronomical data analysis, classification with **Machine Learning**, and parameter estimation using **Markov Chain Monte Carlo (MCMC)**.
 
