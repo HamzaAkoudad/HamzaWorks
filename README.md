@@ -6,10 +6,10 @@ This repository contains **Python and MATLAB** scripts for astronomical data ana
 
 ```
 /
-|-- python/        # Python scripts for machine Learning models for astronomical object classification and modeling
-|   | -- Random_Forest_Query_SDSS.py  # Random Forest classifier
+|-- python/        # Python scripts for Machine Learning models for astronomical object classification and modeling
+|   |-- Random_Forest_Query_SDSS.py  # Random Forest classifier
 |   |
-|   | -- neural_network_Query_SDSS.py # Multi-Layer Perceptron classifier
+|   |-- neural_network_Query_SDSS.py # Multi-Layer Perceptron classifier
 |   |
 |   |-- BlackBody_Radiation_with_MCMC_Hamza.py  # Uses emcee to estimate CMB temperature
 |
@@ -17,8 +17,10 @@ This repository contains **Python and MATLAB** scripts for astronomical data ana
 |   |-- orbital_simulation.m  # Jupiter-star 1-star 2 system simulation
 |
 |-- data/         # Folder for dataset storage
-    |-- ARCADE_data.txt  # ARCADE data
-    |-- COBE_data.txt   # COBE observational data
+|    |-- ARCADE_data.txt  # ARCADE data
+|    |-- COBE_data.txt   # COBE observational data
+|
+|-- README.md # Description of the different scripts
 ```
 
 ## **1. Astronomical Object Classification with Machine Learning (Python)**
@@ -40,7 +42,7 @@ These scripts utilize data from the **Sloan Digital Sky Survey (SDSS)** catalog 
 - **Model:** Trains an **MLP neural network**.
 - **Process:**
   - Downloads and preprocesses the SDSS data.
-  - Configures and trains an **MLP with architecture \*\*\*\*\*\*\*\*****`(128, 64)`**.
+  - Configures and trains an **MLP with architecture `(128, 64)`**.
   - Evaluates model accuracy and generates a classification report.
 
 ---
@@ -103,15 +105,15 @@ Run the script in **MATLAB**, ensuring that the function `termino_dcha_tres` is 
    ```
 2. **Run Python scripts**:
    ```bash
-   cd python/classification
-   python random_forest.py
+   cd python
+   python Random_Forest_Query_SDSS.py
    ```
    ```bash
-   cd python/mcmc_cmb
-   python cmb_temperature_mcmc.py
+   python neural_network_Query_SDSS.py
+   ```
+   ```bash
+   python BlackBody_Radiation_with_MCMC_Hamza.py
    ```
 3. **Run MATLAB script**:
    Open `matlab/orbital_simulation.m` in MATLAB and execute it.
-
-
 
