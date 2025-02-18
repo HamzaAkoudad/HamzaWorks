@@ -1,6 +1,6 @@
 # **Using Computational Tools for Scientific Analysis (Machine Learning Classification, Markov Chain Monte Carlo Method)**
 
-This repository showcases the use of **Python and MATLAB** for scientific computing, including **Machine Learning**, **Markov Chain Monte Carlo (MCMC)**, and **Orbital Simulations**.
+This repository showcases the use of **Python and MATLAB** for scientific computing, including **Machine Learning**, **Markov Chain Monte Carlo (MCMC)** and **Orbital Simulations**.
 
 ## **Repository Structure**
 
