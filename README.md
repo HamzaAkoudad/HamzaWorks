@@ -6,20 +6,19 @@ This repository contains **Python and MATLAB** scripts for astronomical data ana
 
 ```
 /
-|-- python/        # Python scripts for data analysis and modeling
-|   |-- classification/      # Machine Learning models for astronomical object classification
-|   |   |-- random_forest.py  # Random Forest classifier
-|   |   |-- mlp_classifier.py # Multi-Layer Perceptron classifier
+|-- python/        # Python scripts for machine Learning models for astronomical object classification and modeling
+|   | -- Random_Forest_Query_SDSS.py  # Random Forest classifier
 |   |
-|   |-- mcmc_cmb/            # MCMC estimation of the CMB temperature
-|       |-- cmb_temperature_mcmc.py  # Uses emcee to estimate CMB temperature
+|   | -- neural_network_Query_SDSS.py # Multi-Layer Perceptron classifier
+|   |
+|   |-- BlackBody_Radiation_with_MCMC_Hamza.py  # Uses emcee to estimate CMB temperature
 |
 |-- matlab/       # MATLAB scripts for orbital simulations
-|   |-- orbital_simulation.m  # Jupiter-Saturn-Sun system simulation
+|   |-- orbital_simulation.m  # Jupiter-star 1-star 2 system simulation
 |
 |-- data/         # Folder for dataset storage
-    |-- sdss_data.csv  # SDSS dataset for classification
-    |-- cmb_data.txt   # CMB observational data
+    |-- ARCADE_data.txt  # ARCADE data
+    |-- COBE_data.txt   # COBE observational data
 ```
 
 ## **1. Astronomical Object Classification with Machine Learning (Python)**
